@@ -320,7 +320,13 @@ class project:
         legend = QgsLayoutItemLegend(layout)
         legend.setTitle("Legend")
         layout.addLayoutItem(legend)
-        legend.attemptMove(QgsLayoutPoint(230,15,QgsUnitTypes.LayoutMillimeters))
+        legend.attemptMove(QgsLayoutPoint(230,60,QgsUnitTypes.LayoutMillimeters))
+
+        north = QgsLayoutItemPicture(layout)
+        north.setPicturePath(r"C:\\Users\\hp\AppData\\Roaming\\QGIS\\QGIS3\\profiles\default\\python\\plugins\\project\\north.png")
+        layout.addLayoutItem(north)
+        north.attemptResize(QgsLayoutSize(23, 23,QgsUnitTypes.LayoutMillimeters)) 
+        north.attemptMove(QgsLayoutPoint(230,15,QgsUnitTypes.LayoutMillimeters))      
 
         # scalebar=QgsLayoutItemScaleBar(layout)
         # scalebar.setStyle('Single Box')
@@ -367,6 +373,7 @@ class project:
 
     def addPoint(self,X,Y):
         self.lista.clear()
+        self.decision = "favorabe"
         self.listTemp.clear()
     # and
         if  int(self.dlg.lineEdit_3.text()) <= 1000 :
